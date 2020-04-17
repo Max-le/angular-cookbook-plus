@@ -13,6 +13,7 @@ export class WelcomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.userName ="Max";
   }
 
   userName: String;
