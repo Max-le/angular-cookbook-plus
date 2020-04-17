@@ -10,7 +10,7 @@ import { LargeCircleButtonComponent } from './large-circle-button/large-circle-b
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, LargeCircleButtonComponent
    ],
   imports: [
     BrowserModule,
