@@ -14,12 +14,14 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
+import {JumbotronComponent} from './landing/jumbotron/jumbotron.component';
 
 
 // Routes array
 const routes: Routes = [
 
-  {path: 'home', component: MainMenuComponent},
+  {path: 'dashboard', component: MainMenuComponent},
+  {path: '', component: JumbotronComponent},
 
   // Auth components routes from Nebular
   {
