@@ -12,10 +12,14 @@ import { RegisterComponent } from './auth/register/register.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
+import {NbPasswordAuthStrategy, NbAuthModule} from '@nebular/auth';
+
 @NgModule({
   declarations: [
     AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent, JumbotronComponent
-   ],
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,7 +29,19 @@ import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
     AppRoutingModule,
     NbButtonModule,
     NbMenuModule.forRoot(),
-    ],
+    HttpClientModule,
+
+    // Configuring authentication strategy
+    // https://akveo.github.io/nebular/docs/auth/installation#configure-a-strategy
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email'// Alias for this strategy
+        }),
+      ],
+      forms: {},
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
