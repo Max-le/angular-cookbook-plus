@@ -1,11 +1,13 @@
 
 <nb-layout>
 
-  <router-outlet></router-outlet>
+  <nb-layout-column>
+    <app-jumbotron></app-jumbotron>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
 
   <nb-layout-footer fixed>
-    <a routerLink="/login" routerLinkActive="active">Login</a>
-    <a routerLink="/register" routerLinkActive="active">Register</a>
-    <a routerLink="/home" routerLinkActive="active">Home</a>
+    2020 - Created by Max Lepin.
   </nb-layout-footer>
 </nb-layout>

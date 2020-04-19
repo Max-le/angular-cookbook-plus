@@ -10,10 +10,11 @@ import { LargeCircleButtonComponent } from './components/large-circle-button/lar
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent
+    AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent, JumbotronComponent
    ],
   imports: [
     BrowserModule,
