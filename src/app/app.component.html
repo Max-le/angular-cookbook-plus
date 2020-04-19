@@ -1,20 +1,11 @@
+
 <nb-layout>
 
-  <nb-layout-header fixed>
-    <h1>Welcome {{user}}</h1>
-  </nb-layout-header>
-<nb-layout-column>
-  <app-large-circle-button [text]="'My Cookbook'"></app-large-circle-button>
-</nb-layout-column>
-  <nb-layout-column>
-    <app-large-circle-button [text]="'In my fridge'"></app-large-circle-button>
-  </nb-layout-column>
-  <nb-layout-column>
-    <app-large-circle-button [text]="'Suggestions'"></app-large-circle-button>
-  </nb-layout-column>
+  <router-outlet></router-outlet>
 
   <nb-layout-footer fixed>
-  <!-- Insert footer here -->
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+    <a routerLink="/register" routerLinkActive="active">Register</a>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
   </nb-layout-footer>
-
 </nb-layout>

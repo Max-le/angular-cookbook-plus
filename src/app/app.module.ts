@@ -3,14 +3,17 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbButtonModule } from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
-import { LargeCircleButtonComponent } from './large-circle-button/large-circle-button.component';
+import { LargeCircleButtonComponent } from './components/large-circle-button/large-circle-button.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent
+    AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent
    ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { LargeCircleButtonComponent } from './large-circle-button/large-circle-b
     NbLayoutModule,
     NbEvaIconsModule,
     AppRoutingModule,
-    NbButtonModule
+    NbButtonModule,
+    NbMenuModule.forRoot(),
     ],
   providers: [],
   bootstrap: [AppComponent]
