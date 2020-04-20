@@ -37,13 +37,13 @@ import {NbPasswordAuthStrategy, NbAuthModule} from '@nebular/auth';
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email', // Alias for this strategy
-          baseEndpoint: 'http://localhost:4200',
+          baseEndpoint: 'http://localhost:8080',
           login: {
             endpoint: '/login',
             method: 'post',
           },
           register: {
-            endpoint: '/sign-up',
+            endpoint: 'users/sign-up',
             method: 'post',
           }
         }),
