@@ -36,7 +36,16 @@ import {NbPasswordAuthStrategy, NbAuthModule} from '@nebular/auth';
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({
-          name: 'email'// Alias for this strategy
+          name: 'email', // Alias for this strategy
+          baseEndpoint: 'http://localhost:4200',
+          login: {
+            endpoint: '/login',
+            method: 'post',
+          },
+          register: {
+            endpoint: '/sign-up',
+            method: 'post',
+          }
         }),
       ],
       forms: {},
