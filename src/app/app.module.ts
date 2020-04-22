@@ -14,7 +14,7 @@ import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
 import {HttpClientModule} from '@angular/common/http';
 
-import {NbPasswordAuthStrategy, NbAuthModule} from '@nebular/auth';
+import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/auth';
 
 @NgModule({
   declarations: [
@@ -45,6 +45,10 @@ import {NbPasswordAuthStrategy, NbAuthModule} from '@nebular/auth';
           register: {
             endpoint: 'users/sign-up',
             method: 'post',
+          },
+          token: {
+            class: NbAuthJWTToken,
+            key: 'token',
           }
         }),
       ],
