@@ -7,15 +7,17 @@ import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebu
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { LargeCircleButtonComponent } from './components/large-circle-button/large-circle-button.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
+import {HttpClientModule} from '@angular/common/http';
+
+import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/auth';
+
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent, JumbotronComponent
-   ],
+    AppComponent, LargeCircleButtonComponent, MainMenuComponent, JumbotronComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,7 +27,32 @@ import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
     AppRoutingModule,
     NbButtonModule,
     NbMenuModule.forRoot(),
-    ],
+    HttpClientModule,
+
+    // Configuring authentication strategy
+    // https://akveo.github.io/nebular/docs/auth/installation#configure-a-strategy
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email', // Alias for this strategy
+          baseEndpoint: 'http://localhost:8080',
+          login: {
+            endpoint: '/login',
+            method: 'post',
+          },
+          register: {
+            endpoint: 'users/sign-up',
+            method: 'post',
+          },
+          token: {
+            class: NbAuthJWTToken,
+            key: 'token',
+          }
+        }),
+      ],
+      forms: {},
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

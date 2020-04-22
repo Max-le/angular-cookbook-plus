@@ -9,10 +9,9 @@ import {Router} from '@angular/router';
       <hr>
       <p>Save and organize your favorite recipes, find some refreshing ideas, and much more !</p>
       <p>
-        <button appearance="outline" shape="round" nbButton>Learn more</button>
-        <button (click)="redirect()" appearance="outline" shape="round" nbButton>Login</button>
-        <button appearance="outline" shape="round" nbButton>Register</button>
-        <button appearance="outline" shape="round" nbButton>Learn more</button>
+        <button (click)="redirect('auth/login')" appearance="outline" shape="round" nbButton>Login</button><br>
+        <button (click)="redirect('auth/register')" appearance="outline" shape="round" nbButton>Register</button><br>
+        <button (click)="redirect('about')" appearance="outline" shape="round" nbButton>Learn more</button>
       </p>
   `,
   styles: [
@@ -27,9 +26,9 @@ export class JumbotronComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  redirect(){
+  redirect(route: string){
     // TODO : make this a function w parameter to handle all routes.
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl(route);
   }
 
 }
