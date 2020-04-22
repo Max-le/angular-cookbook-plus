@@ -7,8 +7,6 @@ import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebu
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { LargeCircleButtonComponent } from './components/large-circle-button/large-circle-button.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
@@ -18,7 +16,7 @@ import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/aut
 
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent, LoginComponent, RegisterComponent, MainMenuComponent, JumbotronComponent
+    AppComponent, LargeCircleButtonComponent, MainMenuComponent, JumbotronComponent
   ],
   imports: [
     BrowserModule,
