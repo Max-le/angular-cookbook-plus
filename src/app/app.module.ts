@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
-import { LargeCircleButtonComponent } from './components/large-circle-button/large-circle-button.component';
+import { LargeCircleButtonComponent } from './dashboard/large-circle-button/large-circle-button.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
 
@@ -39,6 +39,10 @@ import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/aut
           login: {
             endpoint: '/login',
             method: 'post',
+            redirect: {
+              success: 'dashboard',
+              failure: null,
+            }
           },
           register: {
             endpoint: 'users/sign-up',
