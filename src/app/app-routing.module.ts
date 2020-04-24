@@ -19,6 +19,7 @@ import {LandingComponent} from './landing/landing.component';
 const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent},
+  {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: LandingComponent},
 
   // Auth components routes from Nebular
