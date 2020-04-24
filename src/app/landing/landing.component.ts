@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-jumbotron',
+  selector: 'app-landing',
   template: `
       <h1>Welcome to CookBook Plus.</h1>
       <h2>CookBook+ is a convenient virtual cooking assistant.</h2>
@@ -17,7 +17,7 @@ import {Router} from '@angular/router';
   styles: [
   ]
 })
-export class JumbotronComponent implements OnInit {
+export class LandingComponent implements OnInit {
 
   constructor(
     private router: Router,

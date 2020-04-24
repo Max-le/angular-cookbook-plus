@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { Routes, RouterModule } from '@angular/router';
 
-import {LoginComponent} from './auth/login/login.component';
-import {RegisterComponent} from './auth/register/register.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 
 import {
@@ -14,14 +12,14 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
-import {JumbotronComponent} from './landing/jumbotron/jumbotron.component';
+import {LandingComponent} from './landing/landing.component';
 
 
 // Routes array
 const routes: Routes = [
 
   {path: 'dashboard', component: DashboardComponent},
-  {path: '', component: JumbotronComponent},
+  {path: 'welcome', component: LandingComponent},
 
   // Auth components routes from Nebular
   {

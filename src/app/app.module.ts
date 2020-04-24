@@ -8,7 +8,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { LargeCircleButtonComponent } from './dashboard/large-circle-button/large-circle-button.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { JumbotronComponent } from './landing/jumbotron/jumbotron.component';
+import { LandingComponent } from './landing/landing.component';
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -16,12 +16,12 @@ import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/aut
 
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent, DashboardComponent, JumbotronComponent
+    AppComponent, LargeCircleButtonComponent, DashboardComponent, LandingComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
     NbEvaIconsModule,
     AppRoutingModule,
