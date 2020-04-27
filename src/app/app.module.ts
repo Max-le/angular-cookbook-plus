@@ -8,6 +8,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingComponent } from './landing/landing.component';
+import {MenuComponent} from './dashboard/menu/menu.component'
 
 import {HttpClientModule} from '@angular/common/http';
 
@@ -15,7 +16,7 @@ import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/aut
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, LandingComponent
+    AppComponent, DashboardComponent, LandingComponent, MenuComponent
   ],
   imports: [
     BrowserModule,
