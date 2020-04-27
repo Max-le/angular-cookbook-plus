@@ -3,26 +3,27 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingComponent } from './landing/landing.component';
-import {MenuComponent} from './dashboard/menu/menu.component'
-
 import {HttpClientModule} from '@angular/common/http';
 
 import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MyComponentComponent } from './dashboard/my-component/my-component.component';
+import { MenuComponent } from './dashboard/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent, DashboardComponent, LandingComponent, MenuComponent
+    AppComponent, LandingComponent, DashboardComponent, MyComponentComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'default'}),
     NbLayoutModule,
+    NbCardModule,
     NbEvaIconsModule,
     AppRoutingModule,
     NbButtonModule,
