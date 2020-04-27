@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { AppRoutingModule } from './app-routing.module';
-import { LargeCircleButtonComponent } from './dashboard/large-circle-button/large-circle-button.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingComponent } from './landing/landing.component';
 
@@ -16,7 +15,7 @@ import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/aut
 
 @NgModule({
   declarations: [
-    AppComponent, LargeCircleButtonComponent, DashboardComponent, LandingComponent
+    AppComponent, DashboardComponent, LandingComponent
   ],
   imports: [
     BrowserModule,
