@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule} from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule, NbIconModule} from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -28,6 +28,7 @@ import { MenuComponent } from './dashboard/menu/menu.component';
     AppRoutingModule,
     NbButtonModule,
     NbMenuModule.forRoot(),
+    NbIconModule,
     HttpClientModule,
 
     // Configuring authentication strategy
