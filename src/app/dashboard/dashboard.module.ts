@@ -4,23 +4,23 @@ import {RouterModule} from "@angular/router"
 
 import { DashboardComponent } from './dashboard.component';
 import { MenuComponent } from './menu/menu.component';
-import { NbLayoutModule, NbCardModule, NbMenuModule} from '@nebular/theme';
-import { MyComponentComponent } from './my-component/my-component.component';
+import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule} from '@nebular/theme';
 
 
 
 @NgModule({
   bootstrap:[DashboardComponent],
 
-  declarations: [DashboardComponent, MenuComponent, MyComponentComponent],
+  declarations: [DashboardComponent, MenuComponent],
   imports: [
     RouterModule,
     NbLayoutModule,
     NbCardModule,
     NbMenuModule,
+    NbIconModule,
   
   ], 
-  exports: [MyComponentComponent, MenuComponent],
+  exports: [MenuComponent],
 
 })
 export class DashboardModule { }
