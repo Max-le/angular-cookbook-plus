@@ -4,7 +4,7 @@ import {RouterModule} from "@angular/router"
 
 import { DashboardComponent } from './dashboard.component';
 import { MenuComponent } from './menu/menu.component';
-import { NbLayoutModule, NbCardModule} from '@nebular/theme';
+import { NbLayoutModule, NbCardModule, NbMenuModule} from '@nebular/theme';
 import { MyComponentComponent } from './my-component/my-component.component';
 
 
@@ -17,6 +17,7 @@ import { MyComponentComponent } from './my-component/my-component.component';
     RouterModule,
     NbLayoutModule,
     NbCardModule,
+    NbMenuModule,
   
   ], 
   exports: [MyComponentComponent, MenuComponent],
