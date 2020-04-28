@@ -19,7 +19,7 @@ import { MyComponentComponent } from './my-component/my-component.component';
     NbCardModule,
   
   ], 
-  exports: [MyComponentComponent],
+  exports: [MyComponentComponent, MenuComponent],
 
 })
 export class DashboardModule { }

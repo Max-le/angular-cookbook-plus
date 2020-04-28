@@ -16,7 +16,7 @@ import { MenuComponent } from './dashboard/menu/menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LandingComponent, DashboardComponent, MyComponentComponent,
+    AppComponent, LandingComponent, DashboardComponent, MyComponentComponent, MenuComponent
   ],
   imports: [
     BrowserModule,
