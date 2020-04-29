@@ -23,6 +23,25 @@ import {
     styleUrls: ['./menu.component.scss'],
   animations: [
     // animation triggers go here
+    trigger('showAndHide', [
+
+      state('visible', style({
+        color: 'red',
+        backgroundColor: 'darkred',
+      })),
+
+      state('hidden', style({
+        color: 'gray',
+        backgroundColor: 'gray',
+      })), 
+
+      transition('open => closed', [
+        animate('1s')
+      ]),
+      transition('closed => open', [
+        animate('0.5s')
+      ]),
+    ])
   ]
 })
 export class MenuComponent implements OnInit {
