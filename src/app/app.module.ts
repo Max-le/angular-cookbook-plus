@@ -1,12 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule, NbIconModule} from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import {HttpClientModule} from '@angular/common/http';
+
 
 import {NbPasswordAuthStrategy, NbAuthModule, NbAuthJWTToken} from '@nebular/auth';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -30,6 +32,8 @@ import { MenuComponent } from './dashboard/menu/menu.component';
     NbMenuModule.forRoot(),
     NbIconModule,
     HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
 
     // Configuring authentication strategy
     // https://akveo.github.io/nebular/docs/auth/installation#configure-a-strategy
