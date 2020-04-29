@@ -19,6 +19,10 @@ import {
       <nb-icon icon="settings-2-outline"></nb-icon>
       <nb-menu [@showAndHide]="isVisible ? 'visible' : 'hidden' " [items]="items"></nb-menu>
     </div>
+
+    <p>The menu is now {{ isVisible ? 'Visible' : 'not visible' }}!</p>
+    <button (click)="toggle()">Test</button>
+
 `,
     styleUrls: ['./menu.component.scss'],
   animations: [
@@ -26,13 +30,13 @@ import {
     trigger('showAndHide', [
 
       state('visible', style({
-        color: 'red',
-        backgroundColor: 'darkred',
+        opacity: '1',
+        display: 'block',
       })),
 
       state('hidden', style({
-        color: 'gray',
-        backgroundColor: 'gray',
+        opacity: '0',
+        display:'none',
       })), 
 
       transition('open => closed', [
@@ -51,6 +55,9 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
   isVisible = false; 
+  toggle() {
+    this.isVisible = !this.isVisible; 
+  }
   items: NbMenuItem[] =  [
 
     {
