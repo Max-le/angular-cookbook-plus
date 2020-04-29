@@ -16,13 +16,9 @@ import {
   selector: 'app-menu',
   template:`
    <div>
-      <nb-icon icon="settings-2-outline"></nb-icon>
+      <nb-icon (click)="toggle()" icon="settings-2-outline"></nb-icon>
       <nb-menu [@showAndHide]="isVisible ? 'visible' : 'hidden' " [items]="items"></nb-menu>
     </div>
-
-    <p>The menu is now {{ isVisible ? 'Visible' : 'not visible' }}!</p>
-    <button (click)="toggle()">Test</button>
-
 `,
     styleUrls: ['./menu.component.scss'],
   animations: [
