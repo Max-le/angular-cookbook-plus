@@ -14,8 +14,13 @@ import {
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  template:`
+   <div>
+      <nb-icon icon="settings-2-outline"></nb-icon>
+      <nb-menu [items]="items"></nb-menu>
+    </div>
+`,
+    styleUrls: ['./menu.component.scss'],
   animations: [
     // animation triggers go here
   ]
