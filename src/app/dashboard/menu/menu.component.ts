@@ -2,10 +2,23 @@ import { Component, OnInit } from '@angular/core';
 
 import { NbMenuItem } from "@nebular/theme";
 
+//importing animations functions
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  styleUrls: ['./menu.component.scss'],
+  animations: [
+    // animation triggers go here
+  ]
 })
 export class MenuComponent implements OnInit {
 
