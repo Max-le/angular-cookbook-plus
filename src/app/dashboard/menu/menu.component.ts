@@ -31,18 +31,19 @@ import {
 
       state('visible', style({
         opacity: '1',
-        display: 'block',
       })),
 
       state('hidden', style({
         opacity: '0',
-        display:'none',
+        display: 'none'
+        
       })), 
 
-      transition('open => closed', [
-        animate('1s')
+      transition('visible => hidden', [
+        animate('0.5s')
       ]),
-      transition('closed => open', [
+      transition('hidden => visible', [
+        style({display:'block'}),
         animate('0.5s')
       ]),
     ])
