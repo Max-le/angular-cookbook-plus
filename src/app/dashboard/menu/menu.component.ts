@@ -17,7 +17,7 @@ import {
   template:`
    <div>
       <nb-icon icon="settings-2-outline"></nb-icon>
-      <nb-menu [items]="items"></nb-menu>
+      <nb-menu [@showAndHide]="isVisible ? 'visible' : 'hidden' " [items]="items"></nb-menu>
     </div>
 `,
     styleUrls: ['./menu.component.scss'],
@@ -50,6 +50,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  isVisible = false; 
   items: NbMenuItem[] =  [
 
     {
