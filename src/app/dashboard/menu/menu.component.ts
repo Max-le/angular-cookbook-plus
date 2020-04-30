@@ -16,8 +16,13 @@ import {
   selector: 'app-menu',
   template:`
    <div>
+   
       <nb-icon (click)="toggle()" icon="settings-2-outline"></nb-icon>
-      <nb-menu [@showAndHide]="isVisible ? 'visible' : 'hidden' " [items]="items"></nb-menu>
+      <button (click)="toggle()">Menu</button>
+      <div class="user-menu" [@showAndHide]="toggle()">
+        <nb-menu  [items]="items"></nb-menu>
+
+      </div>
     </div>
 `,
     styleUrls: ['./menu.component.scss'],
@@ -51,7 +56,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  isVisible = false; 
+  isVisible = true; 
   toggle() {
     this.isVisible = !this.isVisible; 
   }
