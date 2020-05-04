@@ -1,38 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
-import { NbMenuItem } from "@nebular/theme";
+import { NbMenuItem } from '@nebular/theme';
 
 
 @Component({
   selector: 'app-menu',
-  template:`
-   <div>
-   
-      <nb-icon (click)="toggle()" icon="settings-2-outline"></nb-icon>
-      <button (click)="toggle()">Menu</button>
-      <div *ngIf="showMenu" class="user-menu">
-        <nb-menu  [items]="items"></nb-menu>
-      </div>
-    </div>
+  template: `
+
+<!--  <button nbButton (click)="toggle()">Menu</button>-->
+    <nb-card (click)="toggle()">
+      <nb-card-body>
+        <nb-icon icon="settings-2-outline"></nb-icon>
+      </nb-card-body>
+    </nb-card>
+
+     <nb-menu class="user-menu" *ngIf="showMenu" [items]="items"></nb-menu>
 `,
     styleUrls: ['./menu.component.scss'],
- 
+
 })
 export class MenuComponent implements OnInit {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-  showMenu = true; 
-  toggle() {
-    this.showMenu = !this.showMenu; 
-  }
+  showMenu = false;
   items: NbMenuItem[] =  [
 
     {
       title: 'Home',
-      link:'/',
+      link: '/',
     },
     {
       title: 'Profile',
@@ -51,5 +46,11 @@ export class MenuComponent implements OnInit {
       icon: 'unlock-outline',
     },
   ];
+
+  ngOnInit(): void {
+  }
+  toggle() {
+    this.showMenu = !this.showMenu;
+  }
 
 }
