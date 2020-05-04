@@ -15,10 +15,11 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './dashboard/menu/menu.component';
+import { TestAPIComponent } from './test-api/test-api.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LandingComponent, DashboardComponent, MenuComponent
+    AppComponent, LandingComponent, DashboardComponent, MenuComponent, TestAPIComponent
   ],
   imports: [
     BrowserModule,
