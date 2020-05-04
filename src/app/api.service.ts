@@ -5,8 +5,12 @@ import {HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  private SERVER_URL = 'https://api.spoonacular.com';
+  private SERVER_URL = 'http://localhost:4200/hello';
 
   // HttpClient service injection
   constructor(private httpClient: HttpClient) { }
+
+  public get(){
+    return this.httpClient.get(this.SERVER_URL);
+  }
 }
