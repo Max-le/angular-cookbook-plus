@@ -2,15 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { NbMenuItem } from "@nebular/theme";
 
-//importing animations functions
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
 
 @Component({
   selector: 'app-menu',
@@ -19,36 +10,13 @@ import {
    
       <nb-icon (click)="toggle()" icon="settings-2-outline"></nb-icon>
       <button (click)="toggle()">Menu</button>
-      <div class="user-menu" [@showAndHide]="toggle()">
+      <div *ngIf="showMenu" class="user-menu">
         <nb-menu  [items]="items"></nb-menu>
-
       </div>
     </div>
 `,
     styleUrls: ['./menu.component.scss'],
-  animations: [
-    // animation triggers go here
-    trigger('showAndHide', [
-
-      state('visible', style({
-        opacity: '1',
-      })),
-
-      state('hidden', style({
-        opacity: '0',
-        display: 'none'
-        
-      })), 
-
-      transition('visible => hidden', [
-        animate('0.5s')
-      ]),
-      transition('hidden => visible', [
-        style({display:'block'}),
-        animate('0.5s')
-      ]),
-    ])
-  ]
+ 
 })
 export class MenuComponent implements OnInit {
 
@@ -56,9 +24,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  isVisible = true; 
+  showMenu = true; 
   toggle() {
-    this.isVisible = !this.isVisible; 
+    this.showMenu = !this.showMenu; 
   }
   items: NbMenuItem[] =  [
 

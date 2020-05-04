@@ -18,6 +18,7 @@ import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule} from '@nebula
     NbCardModule,
     NbMenuModule,
     NbIconModule,
+    CommonModule,
   ], 
   exports: [MenuComponent],
 
