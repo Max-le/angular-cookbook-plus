@@ -4,7 +4,7 @@ import {RouterModule} from "@angular/router"
 
 import { DashboardComponent } from './dashboard.component';
 import { MenuComponent } from './menu/menu.component';
-import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule} from '@nebular/theme';
+import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule, NbSearchModule} from '@nebular/theme';
 
 
 
@@ -19,6 +19,7 @@ import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule} from '@nebula
     NbMenuModule,
     NbIconModule,
     CommonModule,
+    NbSearchModule,
   ], 
   exports: [MenuComponent],
 

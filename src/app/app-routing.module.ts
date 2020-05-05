@@ -14,6 +14,7 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 import {LandingComponent} from './landing/landing.component';
+import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
 
 
 // Routes array
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: LandingComponent},
+  {path: 'inmyfridge', component : InMyFridgeComponent},
 
   // Auth components routes from Nebular
   {
