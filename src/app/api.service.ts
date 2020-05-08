@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 @Injectable({
+  // If value is DashboardModule, This service will be only available when the dashboard is loadded is the app.
   providedIn: 'root'
 })
 export class ApiService {
