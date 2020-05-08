@@ -17,11 +17,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './dashboard/menu/menu.component';
 import { TestAPIComponent } from './test-api/test-api.component';
 import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
-import { DashboardModule } from './dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
-    AppComponent, LandingComponent,   TestAPIComponent, InMyFridgeComponent
+    AppComponent, LandingComponent, DashboardComponent, MenuComponent, TestAPIComponent, InMyFridgeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +36,6 @@ import { DashboardModule } from './dashboard/dashboard.module';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
-    DashboardModule,
     // Configuring authentication strategy
     // https://akveo.github.io/nebular/docs/auth/installation#configure-a-strategy
     NbAuthModule.forRoot({
