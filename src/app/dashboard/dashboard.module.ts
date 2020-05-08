@@ -4,7 +4,7 @@ import {RouterModule} from "@angular/router"
 
 import { DashboardComponent } from './dashboard.component';
 import { MenuComponent } from './menu/menu.component';
-import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule, NbSearchModule} from '@nebular/theme';
+import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule, NbSearchModule, NbButtonModule} from '@nebular/theme';
 import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
 
 
@@ -18,6 +18,7 @@ import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
     NbCardModule,
     NbMenuModule,
     NbIconModule,
+    NbButtonModule,
     CommonModule,
     NbSearchModule,
   ], 
