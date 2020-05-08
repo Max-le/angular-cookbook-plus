@@ -16,7 +16,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './dashboard/menu/menu.component';
 import { TestAPIComponent } from './test-api/test-api.component';
-import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
+import { InMyFridgeComponent } from './dashboard/in-my-fridge/in-my-fridge.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
     NbButtonModule,
     NbMenuModule.forRoot(),
     NbIconModule,
+    NbSearchModule,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
