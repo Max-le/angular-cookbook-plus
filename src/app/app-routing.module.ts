@@ -14,7 +14,7 @@ import {
   NbResetPasswordComponent,
 } from '@nebular/auth';
 import {LandingComponent} from './landing/landing.component';
-import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
+import { InMyFridgeComponent } from './dashboard/in-my-fridge/in-my-fridge.component';
 
 
 // Routes array

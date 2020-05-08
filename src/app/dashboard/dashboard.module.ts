@@ -5,13 +5,13 @@ import {RouterModule} from "@angular/router"
 import { DashboardComponent } from './dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule, NbSearchModule} from '@nebular/theme';
+import { InMyFridgeComponent } from './in-my-fridge/in-my-fridge.component';
 
 
 
 @NgModule({
-  bootstrap:[DashboardComponent],
 
-  declarations: [DashboardComponent, MenuComponent],
+  declarations: [DashboardComponent, MenuComponent, InMyFridgeComponent],
   imports: [
     RouterModule,
     NbLayoutModule,
@@ -21,7 +21,6 @@ import { NbLayoutModule, NbCardModule, NbMenuModule, NbIconModule, NbSearchModul
     CommonModule,
     NbSearchModule,
   ], 
-  exports: [MenuComponent],
 
 })
 export class DashboardModule { }
