@@ -1,16 +1,10 @@
-// :host {
-//     display: block;
-//     max-height: 25rem;
-//     overflow-x: hidden;
-//     overflow-y: auto;
-//   }
-  
-  .card-row {
-    display: flex;
-    margin: 0 -0.5rem;
-  }
-  
+
+//Screen of device must be at least 600px;
+@media screen and (min-width: 600px){
+
   .card-col {
-   margin-left: 4rem;
-   margin-right: 4rem;
-  }
+    margin-left: 4rem;
+    margin-right: 4rem;
+   }
+
+}
