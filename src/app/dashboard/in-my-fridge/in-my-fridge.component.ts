@@ -43,6 +43,9 @@ export class InMyFridgeComponent implements OnInit {
 
 }
 
+startSearch(){
+  this.searchService.activateSearch('');
+}
 
 
 private formSpoonacularURL(query){
