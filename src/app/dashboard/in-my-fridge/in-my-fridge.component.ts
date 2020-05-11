@@ -54,7 +54,8 @@ private formSpoonacularURL(query){
     const url = 'https://api.spoonacular.com/food/ingredients/autocomplete?'+ 
                 'apiKey='+ SPOONACULAR_API_KEY + 
                 '&query='+ query +
-                '&number=' + numberResults
+                '&number=' + numberResults +
+                '&metaInformation=' + 'false'
     return url;
 }
 
