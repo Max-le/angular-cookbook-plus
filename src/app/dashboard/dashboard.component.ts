@@ -6,6 +6,8 @@ import { Router } from "@angular/router";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  unaccessibleMessage = 'Sorry, this section is not yet available.'
   constructor(private router: Router) { }
 
   ngOnInit(): void {

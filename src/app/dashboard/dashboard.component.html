@@ -6,13 +6,13 @@
   </nb-layout-header>
   <div>
   <nb-layout-column>
-    <button nbButton class="btn-circle" outline shape="round">My Cookbook</button>
+    <button nbButton nbPopover="{{unaccessibleMessage}}" nbPopoverPlacement="bottom" class="btn-circle" outline shape="round">My Cookbook</button>
   </nb-layout-column>
   <nb-layout-column>
     <button (click)="redirect('inmyfridge')" nbButton  class="btn-circle" outline shape="round">In my fridge</button>
   </nb-layout-column>
   <nb-layout-column>
-    <button nbButton class="btn-circle" outline shape="round">Suggestions</button>
+    <button nbButton nbPopover="{{unaccessibleMessage}}" nbPopoverPlacement="bottom"  class="btn-circle" outline shape="round">Suggestions</button>
   </nb-layout-column>
   
 
