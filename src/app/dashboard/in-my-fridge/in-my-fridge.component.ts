@@ -32,7 +32,7 @@ export class InMyFridgeComponent implements OnInit {
     this.valueSearch = data.term;
     
 
-    /*Start querying when size of word is at least 3 to avoid
+    /*Start querying when at least 2 characters typed to avoid
     sending too many requests to the API*/
     if (this.valueSearch.length > 2) {
       fetch(this.formSpoonacularURL(this.valueSearch))
