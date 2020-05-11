@@ -18,10 +18,11 @@ import { MenuComponent } from './dashboard/menu/menu.component';
 import { TestAPIComponent } from './test-api/test-api.component';
 import { InMyFridgeComponent } from './dashboard/in-my-fridge/in-my-fridge.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LandingComponent, TestAPIComponent//, DashboardComponent, MenuComponent, InMyFridgeComponent
+    AppComponent, LandingComponent, TestAPIComponent, AboutComponent//, DashboardComponent, MenuComponent, InMyFridgeComponent
   ],
   imports: [
     DashboardModule,

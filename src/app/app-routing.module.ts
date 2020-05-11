@@ -15,6 +15,7 @@ import {
 } from '@nebular/auth';
 import {LandingComponent} from './landing/landing.component';
 import { InMyFridgeComponent } from './dashboard/in-my-fridge/in-my-fridge.component';
+import { AboutComponent } from './about/about.component';
 
 
 // Routes array
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: LandingComponent},
   {path: 'inmyfridge', component : InMyFridgeComponent},
+  {path:'about', component: AboutComponent},
 
   // Auth components routes from Nebular
   {
