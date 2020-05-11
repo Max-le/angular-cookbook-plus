@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule, NbIconModule, NbSearchModule} from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbButtonModule, NbMenuModule, NbCardModule, NbIconModule, NbSearchModule, NbToastrModule} from '@nebular/theme';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingComponent } from './landing/landing.component';
 import {HttpClientModule} from '@angular/common/http';
@@ -35,6 +35,8 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     NbButtonModule,
     NbMenuModule.forRoot(),
+    NbToastrModule.forRoot(),
+
     NbIconModule,
     NbSearchModule,
     HttpClientModule,
