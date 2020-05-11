@@ -1,17 +1,21 @@
 <nb-layout-header (click)='startSearch()'>
-  <nb-search type="modal-move"></nb-search>
+  <nb-search type="rotate-layout"></nb-search>
 </nb-layout-header>
 <nb-layout-column>
-    <nb-card accent="info">
-        <nb-card-body>
-          Search results will appear here.
-        </nb-card-body>
-      </nb-card>
-    <nb-card *ngFor="let i of selectedIngredients">
-      <nb-card-header>{{i.name | titlecase}}</nb-card-header>
-      <nb-card-body>
-        <img src="{{baseImageUrl+i.image}}" alt="{{i.image}}">
-        
-      </nb-card-body>
-    </nb-card>
+
+
+        <div class="card-col">
+          <nb-card accent="info">
+            <nb-card-body>
+              Search results will appear here.
+            </nb-card-body>
+          </nb-card>
+          <nb-card  *ngFor="let i of selectedIngredients">
+            <nb-card-header>{{i.name | titlecase}}</nb-card-header>
+            <nb-card-body style="text-align: center;">
+              <img style="display: inline-block;" src="{{baseImageUrl+i.image}}" alt="{{i.image}}">
+            </nb-card-body>
+          </nb-card>
+        </div>
+
   </nb-layout-column>
