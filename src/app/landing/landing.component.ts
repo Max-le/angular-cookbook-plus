@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-landing',
   template: `
+  <nb-layout>
+  <nb-layout-column>
       <h1>Welcome to CookBook Plus.</h1>
       <h2>CookBook+ is a convenient virtual cooking assistant.</h2>
       <hr>
@@ -14,6 +16,8 @@ import {Router} from '@angular/router';
         <button (click)="redirect('about')" appearance="outline" shape="round" nbButton>Learn more</button>
         <button (click)="redirect('dashboard')" appearance="outline" shape="round" nbButton>Dashboard</button>
       </p>
+      </nb-layout-column>
+      </nb-layout>
   `,
   styles: [
   ]
