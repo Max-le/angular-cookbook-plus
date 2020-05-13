@@ -4,11 +4,11 @@
         <h2>CookBook+ is a convenient virtual cooking assistant.</h2>
         <hr>
         <p>Save and organize your favorite recipes, find some refreshing ideas, and much more !</p>
-        <p>
-          <button (click)="redirect('auth/login')" appearance="outline" shape="round" nbButton>Login</button>
-          <button (click)="redirect('auth/register')" appearance="outline" shape="round" nbButton>Register</button>
-          <button (click)="redirect('about')" appearance="outline" shape="round" nbButton>Learn more</button>
-          <button (click)="redirect('dashboard')" appearance="outline" shape="round" status = "primary"nbButton hero>▶ Dashboard</button>
-        </p>
+        <div class="button-container">
+          <button class="buutton" (click)="redirect('auth/login')" appearance="outline" shape="round" nbButton>Login</button>
+          <button class="buutton" (click)="redirect('auth/register')" appearance="outline" shape="round" nbButton>Register</button>
+          <button class="buutton" (click)="redirect('about')" appearance="outline" shape="round" nbButton>Learn more</button>
+          <button class="buutton" (click)="redirect('dashboard')" appearance="outline" shape="round" status = "primary"nbButton hero>▶ Dashboard</button>
+        </div>
         </nb-layout-column>
         </nb-layout>
