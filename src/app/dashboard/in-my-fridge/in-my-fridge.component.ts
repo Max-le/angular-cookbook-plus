@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NbSearchService, NbToastrService, NbGlobalPosition} from '@nebular/theme'
+import {NbSearchService, NbToastrService, NbGlobalPosition, NbSidebarService} from '@nebular/theme'
 import {Ingredient} from 'src/app/models/Ingredient'
 import {SPOONACULAR_API_KEY} from 'src/environments/ApiKey'
 
@@ -21,30 +21,44 @@ export class InMyFridgeComponent implements OnInit {
       
      valueSearch: string = '';  
 
+     listIsVisible: boolean = false;
 
+     constructor(private searchService: NbSearchService,private toastrService: NbToastrService,
+      private sidebarService: NbSidebarService) {
+  
+    //Listening typing on NbSearch
+    this.searchService.onSearchInput().subscribe((data: any) => {
+  
+      this.valueSearch = data.term;
+      
+  
+      /*Start querying when at least 2 characters typed to avoid
+      sending too many requests to the API*/
+      if (this.valueSearch.length > 2) {
+        fetch(this.formSpoonacularURL(this.valueSearch))
+        .then((response => response.json()))
+        .then(ingredients => {this.resultIngredients = ingredients});
+      }
+    })
+
+    //Listening to the state of the sidebar
+    this.sidebarService.onCollapse().subscribe( (data:any) => {
+      this.listIsVisible = false; 
+      console.log(this.listIsVisible);
+    } )
+    this.sidebarService.onExpand().subscribe( (data:any) => {
+      this.listIsVisible = true; 
+      console.log(this.listIsVisible);
+    } )
+  
+  }
   ngOnInit(): void {
         //Inititalizes the empty array
         this.resultIngredients = [];
         this.selectedIngredients = [];
+  
   }
-  constructor(private searchService: NbSearchService,private toastrService: NbToastrService) {
 
-  //Listening typing on NbSearch
-  this.searchService.onSearchInput().subscribe((data: any) => {
-
-    this.valueSearch = data.term;
-    
-
-    /*Start querying when at least 2 characters typed to avoid
-    sending too many requests to the API*/
-    if (this.valueSearch.length > 2) {
-      fetch(this.formSpoonacularURL(this.valueSearch))
-      .then((response => response.json()))
-      .then(ingredients => {this.resultIngredients = ingredients});
-    }
-  })
-
-}
 
 startSearch(){
   this.searchService.activateSearch('');
@@ -67,6 +81,13 @@ remove(ingredient: Ingredient){
       this.selectedIngredients.splice(i, 1);
     }
   }
+}
+
+showList(){
+  this.sidebarService.expand();
+}
+hideList(){
+  this.sidebarService.collapse();
 }
 
 
