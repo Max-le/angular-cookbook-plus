@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NbSearchService} from '@nebular/theme'
+import {NbSearchService, NbToastrService, NbGlobalPosition} from '@nebular/theme'
 import {Ingredient} from 'src/app/models/Ingredient'
 import {SPOONACULAR_API_KEY} from 'src/environments/ApiKey'
+
 @Component({
   selector: 'app-in-my-fridge',
   templateUrl: './in-my-fridge.component.html',
@@ -26,7 +27,7 @@ export class InMyFridgeComponent implements OnInit {
         this.resultIngredients = [];
         this.selectedIngredients = [];
   }
-  constructor(private searchService: NbSearchService) {
+  constructor(private searchService: NbSearchService,private toastrService: NbToastrService) {
 
   //Listening typing on NbSearch
   this.searchService.onSearchInput().subscribe((data: any) => {
@@ -51,8 +52,14 @@ startSearch(){
 
 addToList(ingredient: Ingredient){
   this.selectedIngredients.push(ingredient);
-  
+  this.showToast(ingredient.name.charAt(0).toUpperCase() + ingredient.name.slice(1)+" added to your list.", 'bottom-right', 'success')
+
 }
+showToast(msg, position, status){
+  this.toastrService.show(msg, '👩‍🍳',
+   {position, status, preventDuplicates: false});
+}
+
 
 remove(ingredient: Ingredient){
   for ( let i = 0; this.selectedIngredients.length; i++){
