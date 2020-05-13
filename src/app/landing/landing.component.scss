@@ -1,11 +1,7 @@
-.button-container {
-    display: flex;
-    
-    justify-content: space-around;
-
-   // background-color: red;
+.button {
+    margin: 5px;
 }
 
-.button {
-
-    margin: auto;  /* Magic! */}
+.welcome-message {
+    text-align: center;
+}
