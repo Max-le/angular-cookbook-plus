@@ -9,19 +9,21 @@ import {SPOONACULAR_API_KEY} from 'src/environments/ApiKey'
 })
 export class InMyFridgeComponent implements OnInit {
 
-    //Declare a list of ingredients using interface as a pattern
+    //results of search
+    resultIngredients: Ingredient[]
+
+    //items put in list by user
     selectedIngredients: Ingredient[]
 
     //Creates an enum
      size = Object.freeze({"small":"100x100", "medium":"250x250", "large":"500x500"});
-  
-     baseImageUrl = `https://spoonacular.com/cdn/ingredients_${this.size.medium}/`;
-    
+      
      valueSearch: string = '';  
 
 
   ngOnInit(): void {
         //Inititalizes the empty array
+        this.resultIngredients = [];
         this.selectedIngredients = [];
   }
   constructor(private searchService: NbSearchService) {
@@ -37,7 +39,7 @@ export class InMyFridgeComponent implements OnInit {
     if (this.valueSearch.length > 2) {
       fetch(this.formSpoonacularURL(this.valueSearch))
       .then((response => response.json()))
-      .then(ingredients => {this.selectedIngredients = ingredients});
+      .then(ingredients => {this.resultIngredients = ingredients});
     }
   })
 
@@ -45,6 +47,11 @@ export class InMyFridgeComponent implements OnInit {
 
 startSearch(){
   this.searchService.activateSearch('');
+}
+
+addToList(ingredient: Ingredient){
+  console.table(ingredient);
+  this.selectedIngredients.push(ingredient);
 }
 
 
@@ -59,17 +66,12 @@ private formSpoonacularURL(query){
     return url;
 }
 
-private  getImageOfIngredientUrl = imageName => {
+//Image size must be "small", "medium" or "large"
+getImageOfIngredientUrl = (name,size) => {
   //https://spoonacular.com/food-api/docs#Show-Images
 
-  //Creates an enum
-  const size = Object.freeze(
-    {"small":"100x100", "medium":"250x250", "large":"500x500"});
-
-  return `https://spoonacular.com/cdn/ingredients_${size.small}/`+imageName;
+  return `https://spoonacular.com/cdn/ingredients_${size}/`+name;
   
-
-
 }
 
 }
