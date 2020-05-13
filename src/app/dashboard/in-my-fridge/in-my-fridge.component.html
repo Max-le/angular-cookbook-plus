@@ -4,6 +4,12 @@
 </nb-layout-header>
 <nb-sidebar>Your list
 <nb-card *ngFor="let listItem of selectedIngredients">
+  <nb-card-header>
+    <button nbButton style="float: right;">
+         <nb-icon  icon="trash-2" status="danger" 
+          (click)=remove(listItem)></nb-icon>
+    </button>
+  </nb-card-header>
   <nb-card-body style="text-align: center;">
     <img style="display: inline-block;" src="{{getImageOfIngredientUrl(listItem.image, size.small)}}"
            alt="{{listItem.image}}">

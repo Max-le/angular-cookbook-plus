@@ -50,8 +50,16 @@ startSearch(){
 }
 
 addToList(ingredient: Ingredient){
-  console.table(ingredient);
   this.selectedIngredients.push(ingredient);
+  
+}
+
+remove(ingredient: Ingredient){
+  for ( let i = 0; this.selectedIngredients.length; i++){
+    if (this.selectedIngredients[i].name == ingredient.name){
+      this.selectedIngredients.splice(i, 1);
+    }
+  }
 }
 
 
